@@ -1,0 +1,1 @@
+// these all tecniques sorting array in ascending order

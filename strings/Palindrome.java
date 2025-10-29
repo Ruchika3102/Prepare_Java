@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Palindrome {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter a string: ");
+        String input = sc.nextLine();  // take input from user
+        
+        StringBuilder sb = new StringBuilder(input);
+        String str = sb.toString();
+        String rev = sb.reverse().toString();
+        
+        if (str.equals(rev)) {
+            System.out.println("Palindrome");
+        } else {
+            System.out.println("Not a Palindrome");
+        }
+        
+        sc.close();
+    }
+}
