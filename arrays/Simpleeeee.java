@@ -34,3 +34,11 @@ public class Simpleeeee {
         }
     }
 }
+
+
+//By default array elements are initialised to zero if we do not give any value in int
+// arrays are stored in heap memory
+
+
+//String[] names = new String[5];
+//By default array elements are initialised to null if we do not give any value in String

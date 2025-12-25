@@ -9,3 +9,7 @@
 
 
 // one variable contains 4 bytes(for int ,float) and stored in hexadecimal form
+
+//fixed size,contiguous memory location
+// to get element on index 5 its time complexity =O(1)
+//insert element in between O(n)

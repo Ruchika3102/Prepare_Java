@@ -1,0 +1,72 @@
+//these are the functions of class
+//these are used to set and get the values of private variables
+
+
+//firstly learn about get method
+public class GettersAndSettersAndthisKeyword {
+    public static class Student{
+        private String name;   //private variable nu hor class ch ya hor hor file ch accesss krn lyi use hunda get method 
+
+        //getter for name
+        public String getName(){    // make function to get value of name which is private        // public datatypeOfVariableWhichWeWantToGetValue getAnyName(){return variableName;}
+            return name;
+        }
+
+    }
+
+    public static void main(String [] args){
+        Student s1 = new Student();
+        System.out.println(s1.getName());     //calling get method to get value of name private variable   and in tis this shows null because we don not set the value
+    }
+}
+
+
+//now learn about set method
+public class GettersAndSettersAndthisKeyword {
+    public static class Student{
+        private String name;  
+
+        //getter for name
+        public String getName(){    
+            return name;
+        }
+
+        //setter for name
+        public void setName(String Name){   // make function to set value of name which is private       // public void setAnyVariableName(datatypeOfVariableWhichWeWantToSetValue variableName){ variableNameWhichIsPrivate=variableNameWeMakeInFunction;}    //here we use void because we do not return anything in set method
+            //je ure v appa Name di jgah name likhde tah oh default value show krda so eh problem hunda so we use this keyword
+            name=Name;
+        }
+    }
+
+    public static void main(String [] args){
+        Student s1 = new Student();
+        s1.setName("Ruchika");      //calling set method to set value of name private variable
+        System.out.println(s1.getName());    
+    }
+}
+
+
+//this keyword   (shows current value of object)
+//basically je appa set method ch v same variable name ohi likhdiye jo bhr private c so oh computer confuse ho janda tah default values show kru jh appa print krn di koshish krange so we use this keyword hamesha this keyword nal hi krde hunde aw simple nhi krna 
+
+public class GettersAndSettersAndthisKeyword {
+    public static class Student{
+        private String name;  
+
+        //getter for name
+        public String getName(){    
+            return name;
+        }
+
+        //setter for name
+        public void setName(String Name){  
+            this.name=Name;     // this.PrivateVariableName = variableNameWeMakeInFunction
+        }
+    }
+
+    public static void main(String [] args){
+        Student s1 = new Student();
+        s1.setName("Ruchika");      
+        System.out.println(s1.getName());     
+    }
+}

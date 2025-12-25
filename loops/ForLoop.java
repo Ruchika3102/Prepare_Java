@@ -12,3 +12,4 @@ public class ForLoop{
     }
 }
 // if we dont give the stop limit then it will give infinite loopc
+//jo for loop de andar define kita oh for lopp toi bhr nhi aa skda

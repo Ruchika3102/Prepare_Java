@@ -1,0 +1,153 @@
+//constructor    (automatically called when object is created)
+public class ConstructorAndFinalAndStatic {
+    public static class Student{     
+        String name;
+        int age;
+        float percentage;
+
+        //constructor     //public class name(class parameters){assign value by this keyword}  //constructor name is same as class name
+        public Student(String name, int age, float percentage){    //constructor class de andar bnda
+            this.name = name;
+            this.age = age;
+            this.percentage = percentage;
+        }
+    }
+    public static void main(String [] args){           
+        Student s1=new Student("Ruchika",19,91.5f);             //jad constructor bna line aw eve values de sakde aw s1,name ="Ruchika" etc nhi eve nhi likhna penda       
+        System.out.println("Name: "+s1.name+"\nAge: "+s1.age+"\nPercentage: "+s1.percentage);
+        Student s2=new Student("Prerika",19,89.0f);                       
+        System.out.println("Name: "+s2.name+"\nAge: "+s2.age+"\nPercentage: "+s2.percentage);
+        s2.name="Priyanka";  //constructor sirf object creation time ch hi call hunda aw so eh change kr skde aw
+        System.out.println("Updated Name: "+s2.name+"\nAge: "+s2.age+"\nPercentage: "+s2.percentage);
+    }
+}
+
+
+//default constructor no arguments ,no parameters 
+//public Student(){
+//    //default constructor jdo appa constructor nhi bnde tah java apne aap default constructor bna dindi aw 
+//}
+
+//jh appa khud to constructor bna rhe aw th appa kujj arguments nhi de rhe call krde hoye pr sare arguments baad ch de rhe aw s1.name eve krke tah error show kru is because constructorn nu appa parameters dite hoye aw
+
+
+
+
+
+//final keyword
+//means constant value jnu change nhi kr skde
+//final datatype variableName=value;   //final int age=19;  //age di value change nhi kr skde
+//final variable di value sirf ek vaar hi assign kr skde aw
+//hamesha final jad use krde aw tah jithe declare krde aw othe hi value deni pendi aw
+public class ConstructorAndFinalAndStatic {
+    public static class Student{      
+        String name;
+        final int age=18;
+        float percentage;
+
+        public Student(String name, float percentage){
+            this.name = name;
+            this.percentage = percentage;
+        }
+    }
+    public static void main(String [] args){           
+        Student s1=new Student("Ruchika",91.5f);                
+        System.out.println("Name: "+s1.name+"\nAge: "+s1.age+"\nPercentage: "+s1.percentage);
+        Student s2=new Student("Prerika",89.0f);                       
+        System.out.println("Name: "+s2.name+"\nAge: "+s2.age+"\nPercentage: "+s2.percentage);
+       
+    }
+}
+
+
+
+//static keyword  (means updated value store hoju)
+//static variables are shared among all objects of a class
+//static methods can be called without creating an object of the class
+
+//i want to count no. of students created
+//without static keyword
+public class ConstructorAndFinalAndStatic {
+    public static class Student{       
+        String name;
+        int studentCount; 
+
+        public Student(String name){
+            this.name = name;
+            studentCount++;   //increment studentCount whenever a new student is created
+        }
+    }
+    public static void main(String [] args){           
+        Student s1=new Student("Ruchika");             
+        System.out.println("Student Count: "+Student.studentCount);  
+        Student s2=new Student("Prerika");                       
+        System.out.println("Student Count: "+Student.studentCount);  
+        Student s3=new Student("Priyanka");
+        System.out.println("Student Count: "+Student.studentCount);  
+       
+    }
+}
+//this shows 1 for all because studentCount is instance variable so har object di apni copy hundi aw is karke eh har object lyi 1 hi show krda aw
+
+//with static keyword
+public class ConstructorAndFinalAndStatic {
+    public static class Student{       
+        String name;
+        static int studentCount;   //static variable to count no. of students
+
+       
+        public Student(String name){
+            this.name = name;
+            studentCount++; 
+        }
+    }
+    public static void main(String [] args){           
+        Student s1=new Student("Ruchika");             
+        System.out.println("Name: "+s1.name+"\nStudent Count: "+Student.studentCount); 
+        Student s2=new Student("Prerika");                       
+        System.out.println("Name: "+s2.name+"\nStudent Count: "+Student.studentCount); 
+        Student s3=new Student("Priyanka");
+        System.out.println("Name: "+s3.name+"\nStudent Count: "+Student.studentCount);  
+       
+    }
+}
+//this shows updated value because studentCount is static variable so eh sare objects ch shared hundi aw is karke eh updated value show krda aw like 1 2 3 in next next lines
+
+
+//static functions
+//used if we want to access a function in the class without creating an object of the class then write just classname.function
+//static classs da hunda non staticc object da hunda jad tk object nu declare nhi krde odo tak appa non staticvariable nu use nhi kr sakde pr static variable nu kr sakde aw like
+public class ConstructorAndFinalAndStatic {
+    public static class Student{       
+        String name;
+        private static int studentCount;   // we use private because we want to control access to this variable
+    }
+    public static void main(String [] args){
+       System.out.print(Student.studentCount);  //accessing static variable without creating object
+        System.out.print(Student.name);  //error because name is non static variable
+    }
+}
+
+
+//koi hor is da fayda nhi chk ske so we use private keyword and get set method like
+public class ConstructorAndFinalAndStatic {
+    public static class Student{       
+        String name;
+        private static int studentCount;   
+
+        //getter for studentCount
+        public static int getStudentCount(){   //appa static cheej return kr rhe aw tah static likhna payu
+            return studentCount;
+        }
+
+        //setter for studentCount
+        public static void setStudentCount(int count){   
+            studentCount = count;
+        }
+    }
+    public static void main(String [] args){
+       System.out.print(Student.getStudentCount()); 
+       Student.setStudentCount(5);  
+       System.out.print(Student.getStudentCount());  
+    }
+}

@@ -14,3 +14,5 @@ public class SimpleIfElse{
 
     }
 }
+
+//Math.max(a,b) // returns the maximum of a and b

@@ -2,7 +2,7 @@
 // primitive data types are int, float, double, char, boolean
 // non primitive data types are String, Arrays, Classes
 
-public class Simplee {
+public class Simplee{
     public static void main(String[] args){
         int a=10;
         double b=23.12;
